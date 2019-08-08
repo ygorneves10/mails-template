@@ -1,0 +1,277 @@
+<tr>
+    <td align="center" style="padding: 5px 35px 20px 35px; background-color: #ffffff;" bgcolor="#ffffff">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td style="font-family: arial; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 10px;"
+                    mc:edit="Paragraph">
+
+                    <h2 style="text-align: center; font-size: 20px; margin-bottom: 20px; display: block; font-weight: 600; line-height: 36px; color: #0C0D2C; margin-top: 10px; width: 100%;"
+                        mc:edit="Headline">
+                        <img src="http://{{_accountInfo.HostName}}.vteximg.com.br/arquivos/email-check.png?v=5"
+                            style="margin: 7px 10px 0px 0px; display:inline-block; position: relative;" /> Order delivered!
+                    </h2>
+
+                    <div style="font-weight: 600; color: #000000; font-size: 18px; margin-bottom: 20px;">
+                        Hi, {{clientProfileData.firstName}}. How are you?
+                    </div>
+
+                    <div style="font-size: 14px; color: #5B5B5F; margin-bottom: 20px;">
+                        <p style="margin-bottom: 20px">Your order was successfully delivered!</p>
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 0px 50px;">
+                    <div
+                        style="background-color: #f4f4f4; text-align: center; padding: 30px; color: #5B5B5F; font-size: 18px; font-weight: bold;">
+                        Order number: <strong style="color: #bc252a; font-size: 24px;">{{orderId}}</strong>
+                    </div>
+                    <div style="text-align: center; font-size: 14px; color: #5B5B5F; margin-top: 10px;">
+                        Your order was placed on <strong>{{formatDate creationDate}}</strong>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div
+                        style="color: #5B5B5F; width:45%; margin: 50px 0px 50px 0px; display: inline-block; padding-right: 5%; float: left; position: relative;">
+                        <b
+                            style="font-size: 18px; font-weight: bold; display: block; margin-bottom: 10px; color: #000000;">
+                            Delivery data:
+                        </b>
+
+                        <span style="font-size: 13px; line-height: 20px;">
+                            {{shippingData.address.receiverName}} <br />
+                            {{shippingData.address.street}}, {{shippingData.address.number}} <br />
+                            {{shippingData.address.neighborhood}} {{shippingData.address.city}} -
+                            {{shippingData.address.state}}
+                        </span>
+                    </div>
+
+                    <div
+                        style="color: #5B5B5F; width:45%; margin: 50px 0px 50px 0px; display: inline-block; padding-left: 5%; float: left; position: relative">
+                        <b
+                            style="font-size: 18px; font-weight: bold; display: block;  margin-bottom: 10px; color: #000000;">
+                            Payment data:
+                        </b> {{#eq split false}}
+                        <span style="font-size: 13px; line-height: 20px;">
+                            {{#each paymentData.transactions}}
+
+
+                            {{#each payments}}
+                            <p>
+                                {{#eq installments 1}}
+                                {{paymentSystemName}} R$ {{formatCurrency value}}
+                                {{else}}
+                                {{paymentSystemName}} R$ {{formatCurrency value}} (Parcelamento: {{installments}}x)
+                                {{/eq}}
+                            </p>
+                            {{/each}}
+
+                            {{#eq paymentSystemName 'Bank slip'}}
+                            <a href="{{replace url '{Installment}' installments}}" target="_blank"
+                                style="font-size: 16px; font-family: arial; color: #fff; font-weight: 600;text-decoration: none; border-radius: 5px; background-color: #bc252a; padding: 15px; display: block; text-align: center;">Print your payment bill</a>
+                            {{/eq}}
+
+                            {{/each}}
+                        </span> {{/eq}} {{#eq split undefined}}
+                        <span style="font-size: 13px; line-height: 20px;">
+                            {{#each paymentData.transactions}}
+
+                            {{#each payments}}
+                            <p>
+                                {{paymentSystemName}} R$ {{formatCurrency value}} (Installment: {{installments}}x)
+                            </p>
+                            {{/each}}
+
+                            {{#eq paymentSystemName 'Bank slip'}}
+                            <a href="{{replace url '{Installment}' installments}}" target="_blank"
+                                style="font-size: 16px; font-family: arial; color: #333; font-weight: 600;text-decoration: none; border-radius: 5px; background-color: #bc252a; padding: 15px; display: block; text-align: center;">Print your payment bill</a>
+                            {{/eq}}
+
+                            {{/each}}
+                        </span> {{/eq}}
+                    </div>
+                </td>
+            </tr>
+            <!-- SAUDAÃ‡Ã•ES -->
+
+            <!-- Dados do pedido -->
+            <tr>
+                <td align="left"
+                    style="font-family: arial; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 25px;display: inline-flex;flex-wrap: wrap;">
+                    <!--  -->
+                    <b style="color: #bc252a; font-size: 18px; display: block; width: 100%; text-align: left;">Order status:</b><br /><br />
+
+                    <div class="status"
+                        style="vertical-align:top;display:inline-block;padding-right:5px;padding-bottom:10px;padding-top:0px;">
+                        <strong style="vertical-align:top;font-size:16px;color:##000000;">
+                            <img src="http://{{_accountInfo.HostName}}.vteximg.com.br/arquivos/email-checked.png?v=5"
+                                height="25px"
+                                style="margin: 0px 10px 0px 0px; float: left; display:inline-block; position: relative;" />
+                        </strong>
+                        <div
+                            style="display:inline-block;line-height:15px;font-size:10px;color:#000000;padding-left:3px;width:90px;">
+                            <strong style="font-size:14px;">Order placed</strong>
+                            <!--<br><span style="display:inline-block;line-height:16px;">{{formatDate creationDate}} 10:30</span>-->
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="status"
+                        style="vertical-align:top;display:inline-block;padding-right:5px;padding-bottom:10px;padding-top:0px;">
+                        <strong style="vertical-align:top;font-size:16px;color:#B1B1B1;">
+                            <img src="http://{{_accountInfo.HostName}}.vteximg.com.br/arquivos/email-checked.png?v=5"
+                                height="25px"
+                                style="margin: 0px 10px 0px 0px; float: left; display:inline-block; position: relative;" />
+                        </strong>
+                        <div
+                            style="display:inline-block;line-height:15px;font-size:10px;color:#000000;padding-left:3px;width:90px;">
+                            <strong style="font-size:14px;">Payment approuch</strong>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="status"
+                        style="vertical-align:top;vertical-align:top;display:inline-block;padding-right:5px;padding-bottom:10px;padding-top:0px;">
+                        <strong style="vertical-align:top;font-size:16px;color:#B1B1B1;">
+                            <img src="http://{{_accountInfo.HostName}}.vteximg.com.br/arquivos/email-checked.png?v=5"
+                                height="25px"
+                                style="margin: 0px 10px 0px 0px; float: left; display:inline-block; position: relative;" />
+                        </strong>
+                        <div
+                            style="display:inline-block;line-height:15px;font-size:10px;color:#000000;padding-left:3px;width:90px;">
+                            <strong style="font-size:14px;">Order delivered</strong>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="status"
+                        style="vertical-align:top;display:inline-block;padding-right:0px;padding-bottom:10px;padding-top:0px;">
+                        <strong style="vertical-align:top;font-size:16px;color:#B1B1B1;">
+                            <img src="http://{{_accountInfo.HostName}}.vteximg.com.br/arquivos/email-checked.png?v=5"
+                                height="25px"
+                                style="margin: 0px 10px 0px 0px; float: left; display:inline-block; position: relative;" />
+                        </strong>
+                        <div
+                            style="display:inline-block;line-height:15px;font-size:10px;color:#000000;padding-left:3px;width:90px;">
+                            <strong style="font-size:14px;">Order delivered</strong>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td align="right" style="padding-top: 20px;">
+                    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td width="75%" align="left"
+                                style="font-family: arial; font-size: 12px; font-weight: 600; line-height: 24px; padding: 10px; color: #000000;"
+                                mc:edit="Table Head 1">
+                                Product
+                            </td>
+                            <td width="25%" align="left"
+                                style="font-family: arial; font-size: 12px; font-weight: 600; line-height: 24px; padding: 10px; color: #000000;"
+                                mc:edit="Table Head 2"></td>
+                        </tr>
+                    </table>
+
+                    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <!-- Produto n# 1 -->
+                        {{#each items}}
+                        <tr>
+                            <!-- Thumb do produto-->
+                            <td width="20%" align="left"
+                                style="font-family: arial; font-size: 12px; font-weight: 400; line-height: 24px; padding: 5px 0px 5px 0px; color:#333333; padding-bottom: 15px;"
+                                mc:edit="Item 1"> <img src="{{imageUrl}}" width="60px" />
+                            </td>
+
+                            <!-- Quantidade e descriÃ§Ã£o do produto -->
+                            <td width="56%" align="left" style="font-family: arial; font-size: 12px;">
+                                <b style="margin-bottom: 10px; display: block; color: #000000;">{{name}}</b><span>
+
+                                    <span
+                                        style="font-family: arial; font-size: 12px; font-weight: 400; color: #000000;">Delivery
+
+                                        <span>
+                                            <span>
+                                                {{#each ../shippingData.logisticsInfo}}
+                                                {{#eq itemId ../id}}
+                                                {{#each slas}}
+
+                                                {{#eq ../selectedSla id}}
+                                                {{#if deliveryWindow}}
+                                                Agendada
+
+                                                {{else}}
+                                                {{#unless shippingEstimateDate}}
+
+                                            </span>em até <span
+                                                style="font-size:12px;font-family: arial;color: #000000;">
+                                                {{#hasSubStr shippingEstimate 'bd'}}
+                                                {{replace shippingEstimate 'bd' ' dias úteis.'}}
+
+                                                {{else}}
+                                                {{replace shippingEstimate 'd' ' dias.'}}
+                                                {{/hasSubStr}}
+
+                                                {{else}}
+                                            </span>até <span style="font-size:14px;font-family: arial;color: #000000;">
+                                                {{formatDate shippingEstimateDate}}
+
+                                                {{/unless}}
+                                                {{/if}}
+                                                {{/eq}}
+                                                {{/each}}
+                                                {{/eq}}
+                                                {{/each}}
+                                            </span>
+                                        </span>
+                                    </span>
+                            </td>
+                            <!-- Valor do produto -->
+                            <td width="24%" align="left"
+                                style="font-family: arial; font-size: 12px; font-weight: 400; line-height: 17px; color: #000000; padding-left: 15px;">
+                                <b>{{quantity}} x R$ {{formatCurrency sellingPrice}}</b>
+                            </td>
+                        </tr>
+                        {{/each}}
+
+
+                    </table>
+                    <table cellspacing="0" cellpadding="0" border="0" width="40%">
+                        {{#each totals}} {{#if value}}
+                        <tr>
+                            <td width="50%" align="left"
+                                style="font-family: arial; font-size: 12px; font-weight: 300; line-height: 24px; padding: 10px 5px 0px 10px; color: #000000;"
+                                mc:edit="Item 1">
+                                {{#eq id "Items"}}Items{{/eq}} {{#eq id "Shipping"}}Shipping{{/eq}}
+                                {{#eq id "Discounts"}}Discounts{{/eq}} {{#eq id "Tax"}}Tax{{/eq}}
+                            </td>
+                            <td width="50%" align="left"
+                                style="font-family: arial; font-size: 12px; font-weight: 400; line-height: 24px; padding: 10px 5px 0px 10px; color: #000000;"
+                                mc:edit="Item Value 2">R$ {{formatCurrency value}}</td>
+                        </tr>
+                        {{/if}} {{/each}}
+
+                    </table>
+                </td>
+            </tr>
+            {{#if value}}
+            <tr>
+                <td align="right" style="padding-top: 10px;">
+                    <table cellspacing="0" cellpadding="0" border="0" width="40%">
+                        <tr>
+                            <td width="50%" align="left"
+                                style="font-family: arial; font-size: 12px; font-weight: 800; color: #000000;  line-height: 24px; padding: 10px;">
+                                TOTAL
+                            </td>
+                            <td width="50%" align="left"
+                                style="font-family: arial; font-size: 12px; font-weight: 700; line-height: 24px; padding: 10px; color: #bc252a">
+                                R$ {{formatCurrency value}}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            {{/if}}
+        </table>
+    </td>
+</tr>

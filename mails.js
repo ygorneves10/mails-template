@@ -6,9 +6,9 @@ var deleteFolderRecursive = function (path) {
     if (fs.existsSync(path)) {
         fs.readdirSync(path).forEach(function (file, index) {
             var curPath = path + "/" + file;
-            if (fs.lstatSync(curPath).isDirectory()) { // recurse
+            if (fs.lstatSync(curPath).isDirectory()) {
                 deleteFolderRecursive(curPath);
-            } else { // delete file
+            } else {
                 fs.unlinkSync(curPath);
             }
         });
@@ -36,14 +36,16 @@ dir.readFiles('mails',
         const newFilePath = './' + folder + "/" + filename.split("\\")[1]
         try {
             fs.appendFile(newFilePath, fileContent, err => {
-                console.log(err)
+                if (err) {
+                    console.log(err)
+                }
             });
         } catch (e) {
-            console.log("Cannot write file ", e);
+            console.log("Cannot append file ", e);
         }
         next();
     },
     function (err, files) {
         if (err) throw err;
-        console.log('finished reading files:', files); // get filepath 
+        console.log('Finished reading files:', files);
     });
