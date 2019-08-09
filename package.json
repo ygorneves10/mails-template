@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "concurrently": "^4.1.1",
-    "node-dir": "^0.1.17"
+    "live-server": "^1.2.1",
+    "node-dir": "^0.1.17",
+    "vue": "^2.6.10"
   }
 }
