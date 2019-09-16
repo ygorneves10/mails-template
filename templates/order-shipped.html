@@ -10,17 +10,17 @@
     <title>{{orders.0.sellers.0.name}}</title>
     <style type="text/css">
         /* Resets: see reset.css for details */
-
+        
         .ReadMsgBody {
             width: 100%;
             background-color: #ebebeb;
         }
-
+        
         .ExternalClass {
             width: 100%;
             background-color: #ebebeb;
         }
-
+        
         .ExternalClass,
         .ExternalClass p,
         .ExternalClass span,
@@ -29,75 +29,65 @@
         .ExternalClass div {
             line-height: 100%;
         }
-
+        
         body {
             -webkit-text-size-adjust: none;
             -ms-text-size-adjust: none;
             font-family: arial, sans-serif;
         }
-
+        
         body {
             padding: 0;
         }
-
+        
         table td {
             border-collapse: collapse;
         }
-
+        
         .yshortcuts a {
             border-bottom: none !important;
         }
-
         /* Constrain email width for small screens */
-
+        
         @media screen and (max-width: 600px) {
             table[class="container"] {
                 width: 100% !important;
             }
         }
-
         /* Give content more room on mobile */
-
+        
         @media screen and (max-width: 480px) {
             .status {
                 padding-bottom: 0px;
             }
         }
-
         /* Styles for forcing columns to rows */
-
+        
         @media only screen and (max-width: 600px) {
             .container {
                 border-radius: 0 !important;
             }
-
             .no-padding-top-bottom-mobile {
                 padding: 0 !important;
             }
-
             .img-product {
                 width: 70px;
             }
-
             .side-border td {
                 padding-left: 0;
             }
-
             .button {
                 padding: 11px 0 !important;
                 font-size: 13px;
                 width: 100%;
             }
-
             .table-button {
                 width: 100% !important;
             }
-
             td[class="force-col"] {
                 display: block;
                 padding-right: 0 !important;
             }
-
             table[class="col-3"] {
                 /* unset table align="left/right" */
                 float: none !important;
@@ -105,12 +95,10 @@
                 padding-bottom: 12px;
                 border-bottom: 1px solid #eee;
             }
-
             /* remove bottom border for last column/row */
             table[id="last-col-3"] {
                 border-bottom: none !important;
             }
-
             /* align images right and shrink them a bit */
             img[class="col-3-img"] {
                 float: right;
@@ -118,16 +106,14 @@
                 max-width: 130px;
             }
         }
-
+        
         @media only screen and (max-width: 800px) {
             .status {
                 width: 100% !important;
             }
-
             .status div {
                 width: 200px !important;
             }
-
             .nav-email {
                 display: none;
             }
@@ -135,44 +121,53 @@
     </style>
 </head>
 
-<body marginwidth="0" marginheight="0" bgcolor="#F4F4F4"
-    style="padding:0px 0px; color:#333; background-color:#f5f5f5; font-family: arial;" leftmargin="0" topmargin="0">
+<body marginwidth="0" marginheight="0" bgcolor="#F4F4F4" style="padding:0px 0px; color:#333; background-color:#f5f5f5; font-family: arial;" leftmargin="0" topmargin="0">
     <!-- 100% wrapper (grey background) -->
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
             <td align="center" style="background-color: #F4F4F4;">
-                <table align="center" border="0" cellpadding="0" cellspacing="0" class="mobile-table"
-                    style="max-width: 600px; width: 100%">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" class="mobile-table" style="max-width: 600px; width: 100%">
                     <tr>
                         <td align="center" valign="top" style="font-size:0; padding-top: 10px;
                              padding-bottom: 0px; padding-left: 0px; padding-right: 0px;" bgcolor="#fff">
-                            <table align="center" border="0" cellpadding="0" cellspacing="0" class="mobile-table"
-                                style="padding-left: 35px; padding-right: 35px; width: 100%">
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" class="mobile-table" style="padding-left: 35px; padding-right: 35px; width: 100%">
                                 <tr>
-                                    <td colspan="12" align="center" valign="top"
-                                        style="font-family: arial; font-size: 36px; font-weight: 800; line-height: 48px; position: relative; width: 100%;"
-                                        class="mobile-center">
-                                        <a href="http://{{_accountInfo.HostName}}.com.br" style="left: 50%; margin-left: -50px; position: relative; display: block;">
-                                            <img border="0" width="100px"
-                                                style="border:none;border-left:0px;border-right:0px; float: left; margin-top: 30px; margin-bottom: 30px"
-                                                alt="{{_accountInfo.TradingName}}"
-                                                src="https://redoxx.vteximg.com.br/arquivos/logo.png"
+                                    <td colspan="1" align="center" valign="top" style="font-family: arial; font-size: 36px; font-weight: 800; line-height: 48px;" class="mobile-center">
+                                        <a href="http://{{_accountInfo.HostName}}.com.br">
+                                            <img border="0" width="100px" style="border:none;border-left:0px;border-right:0px; float: left; margin-top: 30px; margin-bottom: 30px" alt="{{_accountInfo.TradingName}}" src="http://{{_accountInfo.HostName}}.vteximg.com.br/arquivos/{{_accountInfo.HostName}}-logo-email.png?v=6"
                                                 class="img-logo">
                                         </a>
                                     </td>
+                                    <td colspan="6">
+                                        <div style="float: right; color: #152342;">
+                                            <a href="#" style="font-size: 12px; color: #152342; text-decoration: none; margin-right: 10px;">SAC</a> &#8226;
+                                            <a href="#" style="font-size: 12px; color: #152342; text-decoration: none; margin-left: 10px;">TROCAS E DEVOLUÇÕES</a>
+                                        </div>
+                                    </td>
                                 </tr>
                                 <tr class="nav-email">
-                                    <td
-                                        style="position: relative; border-bottom: 1px solid #EAEAEA; border-top: 1px solid #EAEAEA; padding: 20px; font-size: 12px; text-align: center;">
-                                        <a href="#" style="text-decoration: none; color:#000000">BAGS</a>
+                                    <td style="position: relative; border-bottom: 1px solid #EAEAEA; border-top: 1px solid #EAEAEA; padding: 20px; font-size: 12px;">
+                                        <a href="#" style="text-decoration: none; color:#152342">Feminino</a>
+                                        <span class="dot" style="width: 4px; height: 4px; position: absolute; border-radius: 4px; background:#152342; right: 0; top: 24px;"></span>
                                     </td>
-                                    <td
-                                        style="position: relative; border-bottom: 1px solid #EAEAEA; border-top: 1px solid #EAEAEA; padding: 20px; font-size: 12px; text-align: center;">
-                                        <a href="#" style="text-decoration: none; color:#000000">ACCESSORIES</a>
+                                    <td style="position: relative; border-bottom: 1px solid #EAEAEA; border-top: 1px solid #EAEAEA; padding: 20px; font-size: 12px;">
+                                        <a href="#" style="text-decoration: none; color:#152342">Masculino</a>
+                                        <span class="dot" style="width: 4px; height: 4px; position: absolute; border-radius: 4px; background:#152342; right: 0; top: 24px;"></span>
                                     </td>
-                                    <td
-                                        style="position: relative; border-bottom: 1px solid #EAEAEA; border-top: 1px solid #EAEAEA; padding: 20px; font-size: 12px; text-align: center;">
-                                        <a href="#" style="text-decoration: none; color:#000000">RAILROAD GEAR</a>
+                                    <td style="position: relative; border-bottom: 1px solid #EAEAEA; border-top: 1px solid #EAEAEA; padding: 20px; font-size: 12px;">
+                                        <a href="#" style="text-decoration: none; color:#152342">Infantil</a>
+                                        <span class="dot" style="width: 4px; height: 4px; position: absolute; border-radius: 4px; background:#152342; right: 0; top: 24px;"></span>
+                                    </td>
+                                    <td style="position: relative; border-bottom: 1px solid #EAEAEA; border-top: 1px solid #EAEAEA; padding: 20px; font-size: 12px;">
+                                        <a href="#" style="text-decoration: none; color:#152342">Lifestyle</a>
+                                        <span class="dot" style="width: 4px; height: 4px; position: absolute; border-radius: 4px; background:#152342; right: 0; top: 24px;"></span>
+                                    </td>
+                                    <td style="position: relative; border-bottom: 1px solid #EAEAEA; border-top: 1px solid #EAEAEA; padding: 20px; font-size: 12px;">
+                                        <a href="#" style="text-decoration: none; color:#152342">Performance</a>
+                                        <span class="dot" style="width: 4px; height: 4px; position: absolute; border-radius: 4px; background:#152342; right: 0; top: 24px;"></span>
+                                    </td>
+                                    <td style="position: relative; border-bottom: 1px solid #EAEAEA; border-top: 1px solid #EAEAEA; padding: 20px; font-size: 12px;">
+                                        <a href="#" style="text-decoration: none; color:#152342">Outlet</a>
                                     </td>
                                 </tr>
                             </table>
@@ -411,41 +406,41 @@
         </table>
     </td>
 </tr><tr>
-    <td align="center" style="padding: 25px; background-color: #EFEFEF; color: #5B5B5F; font-size: 12px;"
-        bgcolor="#ffffff">
+    <td align="center" style="padding: 25px; background-color: #EFEFEF; color: #5B5B5F; font-size: 12px;" bgcolor="#ffffff">
         <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
             <tr>
                 <td>
                     <p style="font-family: arial; font-weight: 600; line-height: 10px; color: #777777;">
-                        <span style="color: #000000; font-size: 16px;">Ah, always keep an eye!</span><br /><br />
+                        <span style="color: #152342; font-size: 16px;">Ah, fique sempre de olho!</span><br /><br />
                     </p>
                     <ul style="margin: 0px; padding: 0px 20px; line-height: 16px; font-size: 13px;">
                         <li style="margin-bottom: 10px; color: #5B5B5F; list-style: initial;">
-                            After the closing of the purchase it will not be possible to change the recipient's address, include or replace order products, or the delivery services and payment method;
+                            Após o fechamento da compra não será possível alterar o endereço do destinatário, incluir ou substituir produtos do pedido, ou os serviços de entrega e a modalidade de pagamento;
                         </li>
 
                         <li style="margin-bottom: 10px; color: #5B5B5F; list-style: initial;">
-                            Deliveries made by Umbro are made from Monday to Saturday from 8h(8am) to 23h(11pm), except on local and national holidays;
+                            As entregas realizadas pela Fila são feitas de segunda à sábado das 8h às 23h, exceto feriados locais e nacionais;
                         </li>
 
                         <li style="margin-bottom: 10px; color: #5B5B5F; list-style: initial;">
-                            The delivery time starts after the requested payment approval;
+                            O prazo de entrega passa a contar a partir da aprovação do pagamento pedido;
                         </li>
 
                         <li style="margin-bottom: 10px; color: #5B5B5F; list-style: initial;">
-                            Our customer service is open Monday to Saturday from 8h(8am) to 22h(10pm), excluding national holidays, through the number (11) 4090-4090;
+                            O nosso atendimento funciona de segunda à sábado, das 8h às 22h, exceto feriados nacionais através do número (11) 4090-4090;
                         </li>
 
                         <li style="margin-bottom: 10px; color: #5B5B5F; list-style: initial;">
-                            We do not make deliveries to an address other than the customer defined when ordering, such as neighbors, for example;
+                            Não realizamos entregas em endereço diferente do definido pelo cliente no ato do fechamento do pedido, como vizinhos, por exemplo;
                         </li>
 
                         <li style="margin-bottom: 10px; color: #5B5B5F; list-style: initial;">
-                            Porters, receptionists, secretaries, family members are allowed to receive the products since they sign the delivery protocol and present identification.
+                            Estão autorizados a receber mercadorias porteiros, recepcionistas, secretárias, familiares, desde que assinem o protocolo de entrega e apresentem documento de identificação.
                         </li>
 
                         <li style="margin-bottom: 10px; color: #5B5B5F; list-style: initial;">
-                            We guarantee the quality and perfect condition of consumption and storage of all products from separation to delivery, especially frozen and / or perishable products. However, if the delivery to the condominium or building ordinance is required, the maintenance of these items in the same condition as they were delivered will be the sole responsibility of the customer.
+                            Garantimos a qualidade e em perfeitas condições de consumo e armazenamento de todos os produtos desde a separação até a entrega, principalmente dos produtos congelados e/ou perecíveis. Entretanto, caso seja necessária entrega na portaria de condomínios
+                            ou prédios, a manutenção destes itens na mesma condição na qual foram entregues, será de inteira responsabilidade do cliente.
                         </li>
                     </ul>
                 </td>
@@ -460,47 +455,30 @@
                 <table style="margin: 10px 0;">
                     <tr>
                         <div class="text" style="margin-top: 30px !important; font-weight: lighter">
-                            <strong class="color-featured"
-                                style="font-size: 15px; color: #000000; font-weight: lighter; margin-top: 30px;">
-                                Receive offers on your feed</strong>
+                            <strong class="color-featured" style="font-size: 15px; color: #152342; font-weight: lighter; margin-top: 30px;">Receba ofertas na sua timeline</strong>
                         </div>
                     </tr>
                 </table>
                 <table width="320">
                     <tr>
                         <td align="center">
-                            <a href="https://www.facebook.com/RedOxx.MFG/" title="Facebook">
-                                <img height="24px"
-                                    src="https://redoxx.vteximg.com.br/arquivos/footer_facebook.png"
-                                    alt="status" border="0" />
+                            <a href="" title="Facebook">
+                                <img height="32px" src="http://{{_accountInfo.HostName}}.vteximg.com.br/arquivos/email-fb.png?v=2" alt="status" border="0" />
                             </a>
                         </td>
                         <td align="center">
-                            <a href="https://www.youtube.com/user/jimmarkel" title="Youtube">
-                                <img height="24px"
-                                    src="https://redoxx.vteximg.com.br/arquivos/footer_youtube.png"
-                                    alt="status" border="0" />
+                            <a href="" title="Twitter">
+                                <img height="30px" src="http://{{_accountInfo.HostName}}.vteximg.com.br/arquivos/email-tt.png?v=1" alt="status" border="0" />
                             </a>
                         </td>
                         <td align="center">
-                            <a href="https://twitter.com/RedOxxAffairs" title="Twitter">
-                                <img height="24px"
-                                    src="https://redoxx.vteximg.com.br/arquivos/footer_twitter.png"
-                                    alt="status" border="0" />
+                            <a href="" title="Instagram">
+                                <img height="32px" src="http://{{_accountInfo.HostName}}.vteximg.com.br/arquivos/email-ig.png?v=1" alt="status" border="0" />
                             </a>
                         </td>
                         <td align="center">
-                            <a href="hhttps://www.instagram.com/redoxx/" title="Instagram">
-                                <img height="24px"
-                                    src="https://redoxx.vteximg.com.br/arquivos/footer_instagram.png"
-                                    alt="status" border="0" />
-                            </a>
-                        </td>
-                        <td align="center">
-                            <a href="https://br.pinterest.com/redoxx/" title="Pinterest">
-                                <img height="24px"
-                                    src="https://redoxx.vteximg.com.br/arquivos/footer_pinterest.png"
-                                    alt="status" border="0" />
+                            <a href="" title="Youtube">
+                                <img height="32px" src="http://{{_accountInfo.HostName}}.vteximg.com.br/arquivos/email-yt.png?v=1" alt="status" border="0" />
                             </a>
                         </td>
                     </tr>
@@ -508,7 +486,7 @@
                 <table style="margin: 10px 0;">
                     <tr>
                         <td align="center">
-                            <small style="font-size: 12px; color: #5B5B5F;">www.redoxx.com</small>
+                            <small style="font-size: 12px; color: #5B5B5F;">www.fila.com.br</small>
                         </td>
                     </tr>
                 </table>
